@@ -1,0 +1,1110 @@
+<h1 id="manual-de-instalación-de-ruta-en-xubuntu-20.04-desde-cero."><strong>Manual de instalación de RUTA en Xubuntu 20.04 desde cero.</strong></h1>
+<h1 id="realizado-por-estiven-montoya-ramírez"><strong>Realizado por:</strong> <strong>Estiven Montoya Ramírez</strong></h1>
+<p><strong>IES Intelligent Electronic Systems</strong></p>
+<p><strong>Medellín 2021</strong></p>
+<p><strong>Índice.</strong></p>
+<p><strong>1.</strong> Introducción</p>
+<p><strong>2.</strong> Instalación del SO</p>
+<p><strong>2.1.</strong> Descarga de Xubuntu 20.04</p>
+<p><strong>2.2.</strong> Balena Etcher</p>
+<p><strong>2.2.1.</strong> Descarga de Balena Etcher</p>
+<p><strong>2.2.2.</strong> Instalación de Balena Etcher</p>
+<p><strong>2.2.3</strong> Montaje de la imagen ISO</p>
+<p><strong>2.3.</strong> Instalar Xubuntu 20.04</p>
+<p><strong>3.</strong> Instalar aptitude.</p>
+<p><strong>4.</strong> Instalar pcmanfm.</p>
+<p><strong>5.</strong> Instalar una nueva terminal.</p>
+<p><strong>6.</strong> Verificar archivo "sudores".</p>
+<p><strong>7.</strong> LightDM.</p>
+<p><strong>7.1.</strong> Instalar LightDM.</p>
+<p><strong>7.2.</strong> Configurar el autologin de LightDM</p>
+<p><strong>8.</strong> Instalación de x11-xserver-utils</p>
+<p><strong>9.</strong> OpenBox y ObConf.</p>
+<p><strong>9.1.</strong> Qué es OpenBox.</p>
+<p><strong>9.2.</strong> Qué es ObConf.</p>
+<p><strong>9.3.</strong> Instalación de OpenBox y ObConf.</p>
+<p><strong>9.4.</strong> Borrar entornos gráficos innecesarios.</p>
+<p><strong>10.</strong> Configurar la detección del Joystick</p>
+<p><strong>11.</strong> Instalación de Docker Engine.</p>
+<p><strong>12.</strong> Instalación de Docker Compose.</p>
+<p><strong>13.</strong> Instalación de Qt.</p>
+<p><strong>14.</strong> Instalación de MySQL-Client.</p>
+<p><strong>14.1.</strong> Instalación de librería libmysqlclient.</p>
+<p><strong>15.</strong> Instalación de psmisc.</p>
+<p><strong>16.</strong> AlsaUtils.</p>
+<p><strong>17.</strong> Instalar feh</p>
+<p><strong>18.</strong> Instalar AnyDesk</p>
+<p><strong>19.</strong> Montaje de Ruta.</p>
+<p><strong>19.1.</strong> Archivos libICT_bill.s*</p>
+<p><strong>19.2.</strong> Carpeta kbitech_ICT.</p>
+<p><strong>19.3.</strong> Archivo autostart.</p>
+<p><strong>19. 4.</strong> Carpeta RUTA.</p>
+<p><strong>19.5.</strong> Carpeta db.</p>
+<p><strong>19.6.</strong> Manager, configuración, genericModals, docker-clean.</p>
+<p><strong>19.7.</strong> Instalación de librerías necesarias.</p>
+<p><strong>19.8.</strong> Archivo <a href="http://tty-enable.sh">tty-enable.sh</a></p>
+<p><strong>19.9.</strong> Archivo tty-enable.service</p>
+<p><strong>19.10.</strong> Archivo billetero.ini</p>
+<p><strong>19.11.</strong> Archivo <a href="http://xn--autoverificacin-8rb.sh">autoverificación.sh</a></p>
+<p><strong>19.12.</strong> Archivo Crontab.</p>
+<p><strong>19.13.</strong> Carpeta Documents.</p>
+<p><strong>20.</strong> Generar imágenes y montar contenedores.</p>
+<p><strong>1. Introducción</strong></p>
+<p>En este documento veremos la instalación de Ruta desde cero, incluyendo de manera específica cada detalle de la instalación, y las herramientas que estaremos utilizando y sus respectivos enlaces e instalación.</p>
+<p>Esto con el objetivo de hacer que la instalación de ruta sea una tarea mucha más sencilla y rápida.</p>
+<p><strong>2. Instalación del SO (Sistema Operativo).</strong></p>
+<p>El sistema operativo que usaremos para correr nuestra máquina será <strong>Xubuntu 20.04</strong> el cual es ligero y nos evitará un uso excesivo de disco y de memoria.</p>
+<p><strong>2.1. Descarga de Xubuntu 20.04</strong></p>
+<p>Para descargar la imagen ISO de Xubuntu tendremos que dirigirnos primero a el siguiente enlace:</p>
+<p><a href="https://xubuntu.org/download/">https://xubuntu.org/download/</a></p>
+<p>Nos llevará a la una página Web en donde seleccionaremos el servidor más cercano para descargar Xubuntu. Para el caso de Colombia seleccionaremos United States.<br>
+Una vez seleccionemos el servidor aparecerá una ventana, en la que seleccionaremos "Xubuntu-2.04.2.0-desktop-amd64.iso" las cual es la 6ta (sexta opción)<br>
+La descarga iniciará inmediatamente y puede tardar unos cuantos minutos, este tiempo es totalmente dependiente de nuestra conexión a internet. Una vez finalizada la descarga, pasaremos a descargar otro software que nos ayudará a montar el .ISO a una unidad extraíble.</p>
+<p><strong>2.2. Balena Etcher.</strong></p>
+<p>Balena Etcher es un software que nos permitirá formatear, crear y almacenar una imagen ISO de un SO en nuestra USB booteable.</p>
+<p><strong>2.2.1 Descarga de Balena Etcher.</strong></p>
+<p>Descargaremos Balena Etcher desde el siguiente enlace:</p>
+<p><a href="https://www.balena.io/etcher/">https://www.balena.io/etcher/</a></p>
+<p><strong>2.2.2. Instalación de Balena Etcher</strong></p>
+<p>Una vez termine nuestra descarga, abriremos el ejecutable que descargamos. Inmediatamente nos aparecerá una  ventana, en la cual se nos específica los términos y condiciones del software. Para continuar con la instalación daremos click en "Acepto".</p>
+<p>Comenzará la instalación del software, esto tardará unos segundos y una vez terminada se abrirá inmediatamente la interfaz ya funcional del programa.</p>
+<p><strong>2.2.3 Montaje de la imagen ISO</strong></p>
+<p>Sabremos que la instalación a finalizado en cuanto veamos la interfaz del software ya ejecutada.<br>
+Ahora, conectaremos la unidad extraíble a nuestro equipo y daremos click a la opción en azul "Flash from File" y seleccionaremos el archivo .ISO de Xubuntu que descargamos anteriormente. Después de esto, seleccionaremos la opción "Select target" la cual nos permitirá seleccionar la unidad extraíble que formatearemos y seguidamente bootearemos.<br>
+Una vez hecho esto, le daremos click en "Flash!" para iniciar la creación de la USB booteable, este proceso tardará unos minutos.</p>
+<p><strong>2.3. Instalar Xubuntu 20.04</strong></p>
+<p>Para empezar con la instalación reiniciaremos el equipo, mientras el equipo se reinicia presionaremos la tecla para entrar al menú de arranque de la computadora (El botón para ingresar a este menú varía dependiendo del equipo, por lo general suele ser alguna de las teclas entre F1 y F4, o F9 y F12. En casos menos comunes puede ser también con la tecla Esc).</p>
+<ul>
+<li>
+<p>Como opción de arranque vamos a elegir la unidad extraíble que booteamos en pasos anteriores para así instalar Xubuntu.</p>
+</li>
+<li>
+<p>Nos saldrá una imagen, en donde deberemos esperar a que el Sistema Operativo inicie desde la unidad, esto puede tardar un par de minutos.</p>
+</li>
+<li>
+<p>Cuando haya terminado de cargar nos aparecerá un Escritorio, en él veremos un archivo ejecutable con icono de un disco sobre el cual haremos un doble Click para ejecutarlo.</p>
+</li>
+<li>
+<p>El proceso de instalación iniciará y nos abrirá una ventana en la que seleccionaremos nuestro idioma de preferencia (español).</p>
+</li>
+<li>
+<p>Elegiremos el tipo de acento, en este caso Español Latinoamericano y seleccionaremos también la configuración de teclado "Dead Tilde".</p>
+</li>
+<li>
+<p>En la siguiente ventana que saldrá después de esto, seleccionamos únicamente la opción "Descargar actualizaciones…" y damos Click en "Continuar".</p>
+</li>
+<li>
+<p>En la siguiente ventana elegiremos la franja horaria para nuestro país (Colombia).</p>
+</li>
+<li>
+<p>En la siguiente ventana rellenaremos el nombre del equipo como "ruta" y pondremos como contraseña "ruta123*.*"<br>
+También marcaremos la opción "Iniciar automáticamente".</p>
+</li>
+<li>
+<p>Seleccionaremos "Borrar disco e instalar Xubuntu" como tipo de instalación y daremos Click en "Instalar ahora".</p>
+</li>
+<li>
+<p>La siguiente ventana es únicamente de confirmación por lo que daremos Click en "Continuar".</p>
+</li>
+</ul>
+<p>Esto iniciará la instalación del sistema operativo la cual tardará unos cuantos minutos.<br>
+Una vez terminemos de instalar Xubuntu reiniciaremos el equipo, éste nos mostrará la siguiente pantalla en la que nos pedirá que retiremos la unidad extraíble y después presionemos la tecla Enter. Hecho esto tendremos instalado Xubuntu 20.04 en nuestro equipo.</p>
+<p><strong>3. Instalar aptitude.</strong></p>
+<p>Aptitude es un comando parecido a apt, pero este nos permitirá estar al tanto de qué cosas extra instalará algún software.<br>
+Para instalarlo abrimos una terminal. Esto lo haremos dando Click Derecho sobre el escritorio, se nos desplegará un menú del cual Clickaremos la opción "Terminal Emulator" y en ella escribiremos el siguiente comando:</p>
+<pre><code>sudo apt-get install aptitude
+</code></pre>
+<p><strong>4. Instalar pcmanfm.</strong></p>
+<p>Lo instalaremos escribiendo el siguiente comando en la terminal de nuestro equipo:</p>
+<pre><code>sudo aptitude install pcmanfm
+</code></pre>
+<p><strong>5. Instalar una nueva terminal.</strong></p>
+<p>Este paso es totalmente opcional, ya que no es necesario usar otra terminal aparte de la que ya tenemos, pero si queremos una terminal un poco más cómoda y con más opciones de pegado ejecutaremos el siguiente comando en nuestra terminal:</p>
+<pre><code>sudo aptitude install gnome-terminal
+</code></pre>
+<p><strong>6. Verificar archivo "sudoers".</strong></p>
+<p>Para verificar esto, vamos a ingresar al archivo escribiendo el siguiente comando en consola:</p>
+<pre><code>sudo nano /etc/sudoers
+</code></pre>
+<p>Se abrirá una ventana en la cual deberemos revisar que se encuentre la siguiente información, y en caso de no estar, añadirla:</p>
+<pre><code>User privilege specification
+root ALL=(ALL:ALL) ALL
+ruta ALL=(ALL:ALL) ALL
+#Allow members of group sudo to execute any command
+%sudo ALL=(ALL:ALL) ALL
+</code></pre>
+<p>Si editamos algo en el archivo usaremos la combinación Ctrl+O para guardar, seguidamente presionaremos la tecla Enter y finamente cerramos la ventana con la combinación Ctrl+X.</p>
+<p>En caso de no haber modificado nada simplemente cerramos con la combinación Ctrl+X.</p>
+<p><strong>7. LightDM.</strong></p>
+<p><strong>7.1. Instalar LightDM.</strong></p>
+<p>Es un gestor de sesiones, esa parte en la que nos pide el usuario y clave para acceder a nuestro perfil de sistema operativo, es eso, un entorno gráfico para la sesión.</p>
+<p>Este se instala ejecutando el siguiente comando en la terminal:</p>
+<pre><code>sudo apt-get install lightdm
+</code></pre>
+<p><strong>7.2. Configurar el autologin de LightDM</strong></p>
+<p>Ingresaremos al archivo lightdm.conf ejecutando el siguiente comando por la terminal:</p>
+<pre><code>sudo nano /etc/lightdm/lightdm.conf
+</code></pre>
+<p>En este archivo colocaremos la siguiente información:</p>
+<pre><code>[SeatDefaults]
+autologin-user = ruta
+autologin-user-timeout=0
+</code></pre>
+<p><strong>8. Instalación de x11-xserver-utils</strong></p>
+<p>x11-xserver-utils es un servidor grafico para las personas que no quieren utilizar solo línea de comandos, antes de instalar, debemos actualizar los repositorios escribiendo en la terminal el comando:</p>
+<pre><code>sudo apt-get update
+</code></pre>
+<p>Ahora instalaremos x11-xserver-utils escribiendo en la terminal el comando:</p>
+<pre><code>sudo apt-get install x11-xserver-utils
+</code></pre>
+<p><strong>9. OpenBox y ObConf.</strong></p>
+<p><strong>9.1. Qué es OpenBox.</strong></p>
+<p>Es un software administrador de ventanas, que nos traerá consigo un escritorio totalmente vacío.</p>
+<p><strong>9.2. Qué es ObConf.</strong></p>
+<p>ObConf es un programa creado para complementar OpenBox, nos permitirá configurar las ventanas con temas y también configurar los lanzadores.</p>
+<p><strong>9.3. Instalación de OpenBox y ObConf.</strong></p>
+<p>Para iniciar la instalación, tendremos que abrir una terminal. En la terminal que abrimos escribiremos el siguiente comando, para la instalación de OpenBox y ObConf:</p>
+<pre><code>sudo aptitude install openbox obconf
+</code></pre>
+<p>Cerraremos la consola una vez termine de instalar OpenBox y ObConf. Y ahora desde el botón de inicio de Xubuntu cerraremos sesión. En la parte superior derecha donde seleccionaremos OpenBox como entorno gráfico.</p>
+<p><strong>9.4. Borrar entornos gráficos innecesarios.</strong></p>
+<p>Para eliminar los entornos gráficos que ya no usaremos y por lo tanto ocupan un espacio al cual no se le dará uso, ejecutaremos el siguiente comando por medio de la terminal de nuestro equipo:</p>
+<pre><code>sudo apt-get purge libxfce4util-common
+</code></pre>
+<p><strong>10. Configurar la detección del Joystick</strong></p>
+<p>Para configurar la detección del Joystick ingresaremos a la ruta <em><strong>/etc/udev/rules.d</strong></em> . Esto lo haremos ejecutando el siguiente comando en la terminal:</p>
+<pre><code>cd /etc/udev/rules.d
+</code></pre>
+<p>Una vez parados en la carpeta rules.d escribiremos en la consola el siguiente comando, el cual nos permitirá editar el archivo <em><strong>10_ies.rules</strong></em></p>
+<pre><code>sudo nano 10\_ies.rules
+</code></pre>
+<p>En este archivo pegaremos la siguiente información:</p>
+<pre><code>KERNEL==&amp;quot;js\*&amp;quot;, SUBSYSTEM==&amp;quot;input&amp;quot;, ATTRS{idVendor}==&amp;quot;0079&amp;quot;,
+ATTRS{idProduct}==&amp;quot;0006&amp;quot;, SYMLINK+=&amp;quot;ies/key%n&amp;quot;, MODE:=&amp;quot;0666&amp;quot;
+</code></pre>
+<p>Una vez añadida, guardamos con Ctrl+O, seguido de Enter y Ctrl+X para finalizar.</p>
+<p><strong>11. Instalación de Docker Engine.</strong></p>
+<p>Para instalar Docker Engine, debemos actualizar primero los repositorios. Esto lo haremos ejecutando el siguiente comando en nuestra terminal:</p>
+<pre><code>sudo apt-get update
+</code></pre>
+<p>Una vez actualizados los repositorios, seguiremos los siguientes pasos o podemos verlos desde <a href="https://docs.docker.com/engine/install/ubuntu/"><strong>https://docs.docker.com/engine/install/ubuntu/</strong></a> para instalar Docker Engine.</p>
+<p>Ejecutamos el siguiente comando en nuestra terminal:</p>
+<pre><code>sudo apt-get install \
+apt-transport-https \
+ca-certificates \
+curl \
+gnupg \
+lsb-release
+</code></pre>
+<p>Ahora agregaremos la llave GPG, esto lo haremos ejecutando el siguiente comando en la terminal:</p>
+<pre><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+</code></pre>
+<p>Después de esto, ejecutaremos el siguiente comando en la terminal:</p>
+<pre><code>echo \
+&amp;quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+$(lsb\_release -cs) stable&amp;quot; | sudo tee /etc/apt/sources.list.d/docker.list \&amp;gt; /dev/nul
+</code></pre>
+<p>Finalmente, para instalar Docker Engine, escribiremos y ejecutaremos el siguiente comando en nuestra terminal:</p>
+<pre><code>sudo apt-get install docker-ce docker-ce-cli containerd.io
+</code></pre>
+<p><strong>12. Instalación de Docker Compose.</strong></p>
+<p>Para hacer esto, vamos al enlace <a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a> en donde encontraremos la documentación de los pasos que seguiremos a continuación.</p>
+<p>Ejecutaremos la siguiente línea de comando:</p>
+<pre><code>_**sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.29.0/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose**_
+</code></pre>
+<p>Le daremos permisos de ejecución a docker ejecutando el comando:</p>
+<pre><code>sudo chmod +x /usr/local/bin/docker-compose
+</code></pre>
+<p>Verificamos la versión de docker ejecutando el comando en la terminal:</p>
+<pre><code>docker-compose –version
+</code></pre>
+<p><strong>13. Instalación de Qt.</strong></p>
+<p>Para iniciar con la instalación primero debemos descargarlo, así que vamos a <a href="https://www.qt.io/download-thank-you">https://www.qt.io/download-thank-you</a> y presionamos el botón verde que dice Download.</p>
+<p>Nos aparecerá una ventana en donde seleccionaremos la opción que dice "Save file" y después en "Ok" para iniciar la descarga.</p>
+<p>Ahora vamos a buscar el archivo descargamos para darle permisos de ejecución, el archivo seguramente lo hallaremos en la carpeta de Descargas. Le daremos permisos de ejecución escribiendo el siguiente comando:</p>
+<pre><code>sudo chmod +x qt-unified-linux-x64-4.0.1-1online.run
+</code></pre>
+<p>Y después lo ejecutaremos escribiendo el comando:</p>
+<pre><code>./qt-unified-linux-x64-4.0.1-1online.run
+</code></pre>
+<p>Y se empezará a ejecutar el instalador de Qt mostrando una ventana en donde se ingresarán las credenciales.</p>
+<ul>
+<li>
+<p>En la siguiente ventana marcaremos la opción "I have read and approve te obligations of using Open Source Qt" y después daremos Click en "Next"</p>
+</li>
+<li>
+<p>En la siguiente ventana simplemente daremos Click en "Next".</p>
+</li>
+<li>
+<p>En la siguiente ventana marcaremos la opción "Help us improve by enabling sending pseudonymus usage statistics in Qt Creator" y daremos Click en "Next".</p>
+</li>
+<li>
+<p>En esta ventana elegimos la siguiente ruta <em><strong>/home/ruta/Documents/qt/</strong></em> y seguidamente seleccionaremos la opción "Custom installation" y Click en "Next"</p>
+</li>
+<li>
+<p>En esta ventana marcaremos la opción "Archive" y daremos Click en el botón que dice "Filter".</p>
+</li>
+<li>
+<p>Desplegaremos Qt</p>
+</li>
+<li>
+<p>Después de desplegar Qt nos aparecerán todas estas opciones. Solo seleccionaremos la opción que dice "Qt 5.9.2" y le daremos Click en "Next".</p>
+</li>
+<li>
+<p>En esta ventana seleccionaremos la opción "I have read and agree…" y daremos Click en "Next".</p>
+</li>
+<li>
+<p>En esta ventana simplemente daremos Click en el botón "Install"</p>
+</li>
+</ul>
+<p>Esto iniciara con la instalación de Qt, proceso que puede tardar varios minutos o incluso más de una hora dependiendo de nuestra conexión, ya que son casi 4GB de información.</p>
+<p><strong>14. Instalación de MySQL-Client.</strong></p>
+<p>Para instalar MySQL-Client ejecutaremos en consola el siguiente comando:</p>
+<pre><code>sudo apt-get install mysql-client
+</code></pre>
+<p><strong>14.1. Instalación de librería libmysqlclient.</strong></p>
+<p>Para descargar la librería de Mysql-Client que necesitamos, ingresaremos al siguiente link, el cual nos descargará el archivo instantáneamente después de seleccionar la opción "Save File" y presionar el botón "Ok".</p>
+<p><a href="http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/libmysqlclient-dev_8.0.21-1_amd64.deb">http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/libmysqlclient-dev_8.0.21-1_amd64.deb</a></p>
+<p>Una vez descargado, antes de instalarlo, vamos a actualizar los repositorios con el comando:</p>
+<pre><code>sudo apt-get update
+</code></pre>
+<p>Y ahora que hemos actualizado los repositorios vamos a instalarlo ejecutando el siguiente comando en la terminal:</p>
+<pre><code>sudo apt-get install libmysqlclient-dev
+</code></pre>
+<p>En caso de obtener algún tipo de error por falta de dependencias o librerías, escribiremos y ejecutaremos el siguiente comando. Con esto, deberíamos haber solucionado el problema.</p>
+<pre><code>sudo apt -f install
+</code></pre>
+<p><strong>15. Instalación de psmisc.</strong></p>
+<p>Para instalar psmisc escribiremos el siguiente comando en la terminal:</p>
+<pre><code>sudo aptitude install psmisc
+</code></pre>
+<h1 id="descargamos-todos-los-archivos-de-ruta"><em><strong>(Descargamos todos los archivos de RUTA)</strong></em></h1>
+<p><strong>16. AlsaUtils</strong></p>
+<p>Para instalar el alsa-utils ejecutaremos el siguiente comando en la terminal:</p>
+<pre><code>sudo apt-get install alsa-utils
+</code></pre>
+<p><strong>17. Instalar feh</strong></p>
+<p>Para instalar feh vamos a ejecutar el siguiente comando en la terminal de nuestro equipo:</p>
+<pre><code>sudo aptitude install feh
+</code></pre>
+<p><strong>18. Instalación de AnyDesk</strong></p>
+<p>AnyDesk es un software que nos permitirá acceder de forma remota al equipo en caso de requerirlo. Nos dirigiremos al siguiente link para descargar AnyDesk:</p>
+<p><a href="https://anydesk.com/es/downloads/linux">https://anydesk.com/es/downloads/linux</a></p>
+<p>Una vez descargado nos dirigimos a Descargas desde la consola y ejecutamos el siguiente comando el cual cambiará dependiendo la versión, en este caso la versión es  <em><strong>anydesk_6.1.1-1_amd64.deb</strong></em> , así que el comando que ejecutamos fue:</p>
+<pre><code>sudo dpkg -i anydesk\_6.1.1-1\_amd64.deb
+</code></pre>
+<p>Después ejecutaremos el siguiente comando en nuestra en caso de haber tenido algún error por dependencias:</p>
+<pre><code>sudo apt -f install
+</code></pre>
+<p><strong>19. Montaje de Ruta.</strong></p>
+<p>Una vez tengamos todos los archivos necesarios en la carpeta de descargas empezaremos a mover archivos a sus respectivas rutas y a cederles los permisos que requieren.</p>
+<p><strong>19.1. Archivos libICT_bill.s*</strong></p>
+<p>Daremos permisos de ejecución a todos los archivos libICT_Bill con el siguiente comando:</p>
+<pre><code>sudo chmod +x libICT\_Bill.s*
+</code></pre>
+<p>Los ubicaremos en la ruta a la que pertenecen ejecutando el siguiente comando:</p>
+<pre><code>sudo mv libICT\_bill.s\* /usr/lib/
+</code></pre>
+<p>Verificaremos todos estos archivos pertenezcan a root en grupo y propietario con el comando:</p>
+<pre><code>sudo chown root:root libICT\_bill.s*
+</code></pre>
+<p><strong>19.2. Carpeta kbitech_ICT.</strong></p>
+<p>Le daremos todos los permisos a la carpeta kbitech_ICT ejecutando en la terminal el comando:</p>
+<pre><code>sudo chmod 777 kbitech\_ICT
+</code></pre>
+<p>Ubicaremos la carpeta kbitech_ITC en la ruta "/usr/include". Esto lo haremos ejecutando el siguiente comando mientras estamos parados en la carpeta de Descargas:</p>
+<pre><code>sudo mv kbitech\_ICT /usr/include
+</code></pre>
+<p>Verificaremos que la carpeta kbitech_ICT pertenezca a root en grupo y propietario:</p>
+<pre><code>sudo chown root:root /usr/include/kbitech\_ICT
+</code></pre>
+<p><strong>19.3 Archivo autostart.</strong></p>
+<p>Estando parados en Descargas, vamos a mover el archivo autostart a <em><strong>.config/openbox</strong></em>. Esto lo haremos ejecutando los siguientes comandos por consola, ya que debemos crear el directorio "openbox".</p>
+<pre><code>cd /.config/	
+
+mkdir openbox
+
+cd /Descargas/
+
+sudo mv autostart .config/openbox
+</code></pre>
+<p>También verificaremos que el archivo autostart pertenezca a ruta:ruta como grupo y propietario. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo chown ruta:ruta .config/openbox/autostart
+</code></pre>
+<p>Por último, le daremos permisos de ejecución. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo chmod +x autostart
+</code></pre>
+<p>Editaremos el archivo autostart ejecutando el siguiente comando por consola+</p>
+<p><strong>19. 4. Carpeta RUTA.</strong></p>
+<p>Estando parados en Descargas, ubicaremos la carpeta RUTA en <em><strong>/home/ruta</strong></em> ejecutando el comando:</p>
+<pre><code>sudo mv RUTA /home/ruta
+</code></pre>
+<p>Ahora correremos los siguientes comandos:</p>
+<pre><code>sudo chmod +x /home/ruta/RUTA/\*/\*.x86\_64 
+
+sudo chmod 777 /home/ruta/RUTA/\*/\*/\*/\*.xml
+</code></pre>
+<p><strong>19.5. Carpeta db.</strong></p>
+<p>Crearemos la carpeta db en <strong>/home/ruta/RUTA/</strong>. Esto lo haremos ejecutando los siguientes comandos:</p>
+<pre><code>sudo cd /home/ruta/RUTA
+</code></pre>
+<p>_ <strong>sudo mkdir db</strong> _</p>
+<p>Una vez creamos esta carpeta, ejecutaremos el siguiente comando:</p>
+<pre><code>sudo chown -R 999:docker db
+</code></pre>
+<p><strong>19.6. Manager, configuración, genericModals, docker-clean.</strong></p>
+<p>Ubicaremos todos los siguientes archivos en la ruta <em><strong>/usr/local/bin</strong></em>:</p>
+<p><em><strong>manager<br>
+configuracion<br>
+genericModals<br>
+docker-clean</strong></em></p>
+<p>Esto lo haremos estando ubicados en Descargas y ejecutando los siguientes comandos en la terminal:</p>
+<pre><code>sudo mv manager /usr/local/bin
+
+sudo mv configuracion /usr/local/bin
+
+sudo mv genericModals /usr/local/bin
+
+sudo mv docker-clean /usr/local/bin
+</code></pre>
+<p>Les daremos permisos de ejecución ejecutando el siguiente comando en la terminal:</p>
+<pre><code>sudo chmod +x manager configuracion genericModals docker-clean
+</code></pre>
+<p>También verificaremos que los archivos pertenezcan a ruta como grupo y propietario. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo chown ruta:ruta manager configuracion genericModals docker-clean	
+</code></pre>
+<p><strong>19.7. Instalación de librerías necesarias.</strong></p>
+<p>Para instalar cada una de las librerías que requerimos para correr RUTA ejecutaremos los siguientes comandos en la terminal de nuestro equipo:</p>
+<pre><code>sudo aptitude install libqt5printsupport5
+
+sudo aptitude install libqt5serialport5
+
+sudo aptitude install libqt5websockets5
+
+sudo aptitude install libqt5sql5
+
+sudo aptitude install libqt5quick5
+
+sudo aptitude install qml-module-qtmultimedia
+
+sudo aptitude install qml-module-qtquick-window2
+</code></pre>
+<p><strong>19.8. Archivo <a href="http://tty-enable.sh">tty-enable.sh</a></strong></p>
+<p>Estando parados en Descargas, vamos a mover el archivo <a href="http://tty-enable.sh">tty-enable.sh</a> a <em><strong>/usr/bin</strong></em>. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo mv tty-enable.sh /usr/bin
+</code></pre>
+<p>También verificaremos que el archivo <a href="http://tty-enable.sh">tty-enable.sh</a> pertenezca a ruta:ruta como grupo y propietario. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo chown ruta:ruta /usr/bin/tty-enable.sh
+</code></pre>
+<p>Por último, le daremos permisos de ejecución. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo chmod +x tty-enable.sh
+</code></pre>
+<p><strong>19.9. Archivo tty-enable.service</strong></p>
+<p>Estando parados en Descargas, vamos a mover el archivo tty-enable.service a <strong>/etc/systemd/system/</strong>. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo mv tty-enable.service /etc/systemd/system/
+</code></pre>
+<p>También verificaremos que el archivo tty-enable.service pertenezca a ruta:ruta como grupo y propietario. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo chown ruta:ruta /etc/systemd/system/tty-enable.service
+</code></pre>
+<p>Por último, le daremos permisos de ejecución. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo chmod +x tty-enable.service
+</code></pre>
+<p>Habilitaremos el servicio ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo systemctl enable ttys-enable.service
+</code></pre>
+<p>Y comenzamos el servicio escribiendo el siguiente comando:</p>
+<pre><code>sudo systemctl start ttys-enable.service
+</code></pre>
+<p><strong>19.10. Archivo billetero.ini</strong></p>
+<p>Estando parados en Descargas, vamos a mover el archivo billetero.ini a <em><strong>/etc/ruta</strong></em>, si el directorio no está creado, lo creamos. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo mv biletero.ini /etc/ruta/
+</code></pre>
+<p>También verificaremos que el archivo billetero.ini pertenezca a ruta:ruta como grupo y propietario. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo chown ruta:ruta /etc/ruta/billetero.ini
+</code></pre>
+<p>Por último, le daremos todos los permisos. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo chmod 777 billetero.ini
+</code></pre>
+<p><strong>19.11. Archivo <a href="http://xn--autoverificacin-8rb.sh">autoverificación.sh</a></strong></p>
+<p>Estando parados en Descargas, vamos a mover el archivo <a href="http://xn--autoverificacin-8rb.sh">autoverificación.sh</a> a <em><strong>/usr/bin</strong></em>. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo mv autoverificacion.sh /usr/bin
+</code></pre>
+<p>También verificaremos que el archivo <a href="http://xn--autoverificacin-8rb.sh">autoverificación.sh</a> pertenezca a ruta:ruta como grupo y propietario. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo chown ruta:ruta /usr/bin/autoverificacion.sh
+</code></pre>
+<p>Por último, le daremos permisos de ejecución. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo chmod +x autoverificacion.sh
+</code></pre>
+<p><strong>19.12. Archivo Crontab.</strong></p>
+<p>Ingresaremos a editar el archivo Crontab ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo nano /etc/crontab
+</code></pre>
+<p>Una vez abierto el editor del archivo, ingresaremos el siguiente texto en la última línea:</p>
+<p><em><strong>01 * * * * root find /RUTA/Screenshots/* -mtime +1 -delete</strong></em></p>
+<p><strong>19.13. Carpeta Documents.</strong></p>
+<p>Verificaremos que la carpeta Documents pertenezca a ruta:ruta como grupo y propietario. Esto lo haremos ejecutando el siguiente comando por consola:</p>
+<pre><code>sudo chown ruta:ruta Documents
+</code></pre>
+<p><strong>20. Generar imágenes y montar contenedores.</strong></p>
+<p>Nos ubicaremos en la carpeta <em><strong>/home/ruta/Documents/docker/</strong></em> ejecutando el comando:</p>
+<pre><code>sudo cd /home/ruta/Documents/docker/
+</code></pre>
+<p>Y ejecutamos los siguientes dos comandos:</p>
+<pre><code>sudo docker-compose -f docker-compose.yml build
+
+sudo docker-compose -f docker-compose.yml up -d
+</code></pre>
+<h1 id="comparativa-de-sistemas-operativos-xubuntu-y-ubuntu-server-sobre-ruta">Comparativa de sistemas operativos Xubuntu y Ubuntu Server sobre Ruta</h1>
+<h1 id="tiempo">Tiempo</h1>
+<p>Probamos los tiempos que tomaba una ejecución en completarse, esto se hizo desde que se encendió la pagina y no ejecutando el lanzador desde consola, para cada juego se hicieron 3 ejecuciones donde se evidencia que la primera vez que se abre el juego toma mas tiempo pero de ahí en adelante tarda mucho menos</p>
+<h2 id="tiempos-de-ejecución-en-xubuntu">Tiempos de ejecución en Xubuntu</h2>
+
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Primer tiempo</th>
+<th>Segundo tiempo</th>
+<th>Tercer tiempo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lanzador</td>
+<td>2.24s</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Blackjack</td>
+<td>5.59s</td>
+<td>3.66s</td>
+<td>3.09s</td>
+</tr>
+<tr>
+<td>B360</td>
+<td>7.48s</td>
+<td>4.27s</td>
+<td>3.50s</td>
+</tr>
+<tr>
+<td>Dados</td>
+<td>8.83s</td>
+<td>4.48s</td>
+<td>3.71s</td>
+</tr>
+<tr>
+<td>Diez o mejor</td>
+<td>9.32s</td>
+<td>3.77s</td>
+<td>3.15s</td>
+</tr>
+<tr>
+<td>Jotas o mejor</td>
+<td>3.93s</td>
+<td>3.59s</td>
+<td>3.37s</td>
+</tr>
+<tr>
+<td>La 24</td>
+<td>7.34s</td>
+<td>3.73s</td>
+<td>3.74s</td>
+</tr>
+<tr>
+<td>Horus</td>
+<td>2.40s</td>
+<td>2.22s</td>
+<td>2.45s</td>
+</tr>
+<tr>
+<td>Narcos</td>
+<td>2.24s</td>
+<td>x</td>
+<td>x</td>
+</tr>
+</tbody>
+</table><h2 id="tiempos-de-ejecución-en-ubuntu-server">Tiempos de ejecución en Ubuntu Server</h2>
+
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Primer tiempo</th>
+<th>Segundo tiempo</th>
+<th>Tercer tiempo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lanzador</td>
+<td>2.41s</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Blackjack</td>
+<td>7.50s</td>
+<td>3.30s</td>
+<td>3.33s</td>
+</tr>
+<tr>
+<td>B360</td>
+<td>6.28s</td>
+<td>3.50s</td>
+<td>3.16s</td>
+</tr>
+<tr>
+<td>Dados</td>
+<td>6.60s</td>
+<td>3.64s</td>
+<td>3.65s</td>
+</tr>
+<tr>
+<td>Diez o mejor</td>
+<td>7.90s</td>
+<td>3.06s</td>
+<td>3.03s</td>
+</tr>
+<tr>
+<td>Jotas o mejor</td>
+<td>3.66s</td>
+<td>3.00s</td>
+<td>3.40s</td>
+</tr>
+<tr>
+<td>La 24</td>
+<td>6.12s</td>
+<td>3.72</td>
+<td>3.10</td>
+</tr>
+<tr>
+<td>Horus</td>
+<td>2.52s</td>
+<td>2.25</td>
+<td>2.26</td>
+</tr>
+<tr>
+<td>Narcos</td>
+<td>3.00s</td>
+<td>2.82s</td>
+<td>2.90s</td>
+</tr>
+<tr>
+<td>Astros</td>
+<td>2.60s</td>
+<td>2.15s</td>
+<td>2.80s</td>
+</tr>
+<tr>
+<td>Frutas</td>
+<td>3.50s</td>
+<td>2.10s</td>
+<td>2.11s</td>
+</tr>
+</tbody>
+</table><h1 id="consumo">Consumo</h1>
+<p>Para el consumo de recursos se tuvo presente el uso de RAM y CPU, se midió con la app Terminus desde el celular, para el equipo se le instalo OpenSSH Server y UpenSSH Client, estos ultimos dos se instalaron con los comandos:</p>
+<ul>
+<li>sudo aptitude install openssh-server</li>
+<li>sudo aptitude install openssh-client</li>
+</ul>
+<h2 id="consumo-de-recursos-en-xubuntu">Consumo de recursos en Xubuntu</h2>
+<p><em>Lanzador</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.16G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>65% - 70%</td>
+</tr>
+</tbody>
+</table><p><em>Blackjack - sin jugar</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.43G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>100% - 115%</td>
+</tr>
+</tbody>
+</table><p><em>Blackjack - jugando</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.50G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>100% - 140%</td>
+</tr>
+</tbody>
+</table><p><em>B360 - sin jugar</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.76G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>98% - 133%</td>
+</tr>
+</tbody>
+</table><p><em>B360 - jugando</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.78G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>110% - 179%</td>
+</tr>
+</tbody>
+</table><h2 id="consumo-de-recursos-en-ubuntu-server">Consumo de recursos en Ubuntu Server</h2>
+<p><em>Lanzador</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.29G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>56% - 70%</td>
+</tr>
+</tbody>
+</table><p><em>Blackjack - sin jugar</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.57G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>98% - 110%</td>
+</tr>
+</tbody>
+</table><p><em>Blackjack jugando</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.64G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>100% - 180%</td>
+</tr>
+</tbody>
+</table><p><em>B360 sin jugar</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.88G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>115% - 140%</td>
+</tr>
+</tbody>
+</table><p><em>B360 jugando</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.293G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>120% - 150%</td>
+</tr>
+</tbody>
+</table><p><em>Dados sin jugar</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.86G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>120% - 140%</td>
+</tr>
+</tbody>
+</table><p><em>Dados jugando</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.90G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>120% - 150%</td>
+</tr>
+</tbody>
+</table><p><em>Diez o mejor - sin jugar</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.68G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>95% - 120%</td>
+</tr>
+</tbody>
+</table><p><em>Diez o mejor - jugando</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.76G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>90% - 160%</td>
+</tr>
+</tbody>
+</table><p><em>Jotas o mejor sin jugar</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.68G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>95% - 120%</td>
+</tr>
+</tbody>
+</table><p><em>Jotas o mejor jugando</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.79G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>90% - 225%</td>
+</tr>
+</tbody>
+</table><p><em>La 24 - sin Jugar</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.79G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>125% - 150%</td>
+</tr>
+</tbody>
+</table><p><em>La 24 - jugando</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.84G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>125% - 160%</td>
+</tr>
+</tbody>
+</table><p><em>Horus - sin Jugar</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.73G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>70% - 100%</td>
+</tr>
+</tbody>
+</table><p><em>Horus - jugando</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.78G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>90% - 215%</td>
+</tr>
+</tbody>
+</table><p><em>Narcos - sin Jugar</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.70G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>60% - 85%</td>
+</tr>
+</tbody>
+</table><p><em>Narcos - jugando</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.80G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>60% -140%</td>
+</tr>
+</tbody>
+</table><p><em>Frutas - sin Jugar</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.70G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>45% - 60%</td>
+</tr>
+</tbody>
+</table><p><em>Frutas - jugando</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.80G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>90% - 245%</td>
+</tr>
+</tbody>
+</table><p><em>Astros - sin Jugar</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.72G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>80% - 115%</td>
+</tr>
+</tbody>
+</table><p><em>Astros - jugando</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Consumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>2.82G</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>80% - 140%</td>
+</tr>
+</tbody>
+</table><h2 id="valoración-de-sistema-operativo-preferido">Valoración de Sistema operativo preferido</h2>
+<p>Teniendo presente los resultados anteriores, el equipo elige Ubuntu Server como preferido para ejecutar Ruta ya que este sobre sale en gran parte de revisiones, tanto por tiempo como por consumo, hay algunas excepciones en las que se ejecuta mejor Xubuntu pero no la suficientes para elegirlo, Xubuntu es un sistema operativo más completo en el sentido de que este cuenta con entorno grafico, libre office, navegador etc, sobran muchas cosas, mientras que Ubuntu Server es más ligero, liviano y carece de lo antes mencionado, es solo consola</p>
+
